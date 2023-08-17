@@ -5,11 +5,8 @@
   "private": true,
   "scripts": {
     "clean": "rimraf .next",
-    "dev": "pnpm run '/^dev:.*/'",
-    "dev:all": "next dev -p 3002",
-    "dev:remote-entry-css": "pnpm run build:remote-entry-css --watch",
-    "build": "next build && pnpm run build:remote-entry-css",
-    "build:remote-entry-css": "postcss ./remoteEntry/remoteEntry.css --config remoteEntry -o ./.next/static/chunks/remoteEntry.css",
+    "dev": "next dev -p 3002",
+    "build": "next build",
     "start": "next start -p 3002",
     "serve:build": "serve .next -p 3002",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,13 +26,8 @@
   },
   "devDependencies": {
     "@module-federation/nextjs-mf": "^7.0.7",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.27",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
     "prettier": "^3.0.1",
     "rimraf": "^5.0.1",
-    "serve": "^14.2.0",
-    "tailwindcss": "^3.3.3"
+    "serve": "^14.2.0"
   }
 }

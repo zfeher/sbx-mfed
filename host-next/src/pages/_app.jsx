@@ -1,5 +1,4 @@
 import App from 'next/app';
-import './global.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;

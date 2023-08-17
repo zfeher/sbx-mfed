@@ -8,7 +8,7 @@ export const Title = () => {
   }, []);
 
   return (
-    <div className="mfe-remote2">
+    <div>
       <h2>
         {' '}
         This came fom <code>remote2</code> !!!
