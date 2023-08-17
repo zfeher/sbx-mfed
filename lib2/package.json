@@ -1,0 +1,25 @@
+{
+  "name": "lib2",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "src/print.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "^18.17.0",
+    "pnpm": "^8.6.11"
+  },
+  "packageManager": "pnpm@8.6.11",
+  "dependencies": {
+    "lodash": "^4.17.0"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "prettier": "^3.0.1"
+  }
+}
