@@ -1,0 +1,32 @@
+{
+  "name": "remote2",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "webpack --mode development --watch --color",
+    "build": "pnpm run clean && webpack --mode production --color",
+    "start": "pnpm serve -p 3004 dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "^18.17.0",
+    "pnpm": "^8.6.11"
+  },
+  "packageManager": "pnpm@8.6.11",
+  "devDependencies": {
+    "@module-federation/node": "^1.0.5",
+    "prettier": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "serve": "^14.2.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "lodash": "~4.17.0"
+  }
+}

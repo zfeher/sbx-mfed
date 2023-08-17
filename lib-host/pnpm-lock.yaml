@@ -1,0 +1,48 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  lib1:
+    specifier: file:..\lib1\lib1-1.0.0.tgz
+    version: file:../lib1/lib1-1.0.0.tgz
+  lib2:
+    specifier: file:..\lib2\lib2-1.0.0.tgz
+    version: file:../lib2/lib2-1.0.0.tgz
+
+devDependencies:
+  prettier:
+    specifier: ^3.0.1
+    version: 3.0.1
+
+packages:
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
+
+  /prettier@3.0.1:
+    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
+  file:../lib1/lib1-1.0.0.tgz:
+    resolution: {integrity: sha512-+QJMQLvvW+37oo3ZZeBVRNH+Yq7zuZDacm3Ce0UqfsXr9Hb/D5H/2n3zldweQxf4fFB1k5bBFoFVIeXMEphH8w==, tarball: file:../lib1/lib1-1.0.0.tgz}
+    name: lib1
+    version: 1.0.0
+    engines: {node: ^18.17.0, pnpm: ^8.6.11}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+
+  file:../lib2/lib2-1.0.0.tgz:
+    resolution: {integrity: sha512-CwijzX9qJqXIH8QQoCfl4KV6iApYXft4zs8qA+EROJsq8NoxgLttSmAKolw6UKpcFCSAiGY6KZmTib1Niirgrw==, tarball: file:../lib2/lib2-1.0.0.tgz}
+    name: lib2
+    version: 1.0.0
+    engines: {node: ^18.17.0, pnpm: ^8.6.11}
+    dependencies:
+      lodash: 4.17.21
+    dev: false

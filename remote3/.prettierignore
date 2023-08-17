@@ -1,0 +1,39 @@
+# default by prettier
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+# from .gitignore
+
+dist/
+dist-ssr/
+storybook-static/
+node_modules/
+cdk.out/
+
+# Editor directories and files
+.idea
+
+# dependencies
+.npm/
+.pnp/
+.pnp.js
+
+# testing
+coverage/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# typescript
+*.d.ts
+
+**/.esbuild
+**/.serverless
+**/.webpack
+
+pnpm-lock.yaml
+
+# release-please generated
+CHANGELOG.md
