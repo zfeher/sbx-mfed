@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "lib1"
+		},
+		{
+			"path": "lib2"
+		},
+		{
+			"path": "lib-host"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#30c39e",
+			"activityBar.background": "#30c39e",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#a632cd",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#30c39e",
+			"titleBar.activeBackground": "#269a7d",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#269a7d99",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.color": "30c39e"
+	}
+}

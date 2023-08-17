@@ -1,0 +1,79 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+.npm/
+.pnp/
+.pnp.js
+
+# testing
+coverage/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# next.js
+.next/
+.swc/
+out/
+
+# production
+build/
+dist/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# local env files (.env, .env.development, .env.production are defaults and should be in the repo)
+.env*.local
+
+# vercel
+.vercel/
+
+# typescript
+*.tsbuildinfo
+*.d.ts
+
+# IDEs
+.idea/
+.vscode/
+
+.serverless/
+.webpack/
+.esbuild/
+
+**/stack.json
+
+# if people use virtualenvs for python scripts
+.venv
+
+# remove files to invoke lambdas locally
+event.json
+
+# Nx caching
+nx-cache
+
+# pact
+**/pact
+
+# New Relic logs
+newrelic_agent.log
+
+# SST + OpenNext
+.sst/*
+!.sst/types
+!.sst/types/index.ts
+!sst-env.d.ts
+.open-next
+
+.env
+
+*.tgz
