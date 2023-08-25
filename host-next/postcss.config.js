@@ -3,5 +3,9 @@ module.exports = {
     'postcss-import': {},
     tailwindcss: {},
     autoprefixer: {},
+    'postcss-prefixer': {
+      prefix: 'fep-',
+      ignore: [],
+    },
   },
 };

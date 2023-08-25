@@ -1,3 +1,4 @@
+const path = require('node:path');
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 const { createDelegatedModule } = require('@module-federation/utilities');
 
@@ -41,6 +42,24 @@ module.exports = {
   webpack(config, options) {
     // // todo
     // config.optimization.minimize = false;
+
+    config.module.rules.push({
+      test: /\.(tsx|jsx|ts|js)$/,
+      // todo: we can be smart here and include third party 1wizz packages and process
+      //  them as well (until they are not mfe or shared deps ofc)
+      exclude: /node_modules[/\\]/,
+      // exclude: (input) => {
+      //   if (input.includes('athing')) console.log('@@@@@@@', input);
+      //   return !input.includes('athing');
+      // },
+      use: {
+        loader: path.resolve('../remote2-next/tailwind-prefixer-loader.js'),
+        options: {
+          prefix: 'rmt1-',
+          tailwindConfigPath: './remoteEntry/tailwind.config.js',
+        },
+      },
+    });
 
     config.plugins.push(
       new NextFederationPlugin({
