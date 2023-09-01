@@ -9,24 +9,32 @@
       "path": "remote1-next"
     },
     {
-      "name": "remote2-next",
-      "path": "remote2-next"
+      "name": "remote2",
+      "path": "remote2"
     },
     {
       "name": "remote3-next",
       "path": "remote3-next"
     },
     {
+      "name": "remote2-next",
+      "path": "remote2-next"
+    },
+    {
       "name": "remote1",
       "path": "remote1"
     },
     {
-      "name": "remote2",
-      "path": "remote2"
-    },
-    {
       "name": "remote3",
       "path": "remote3"
+    },
+    {
+      "name": "remote4",
+      "path": "remote4"
+    },
+    {
+      "name": "lib2",
+      "path": "lib2"
     },
     {
       "name": "host-wp",

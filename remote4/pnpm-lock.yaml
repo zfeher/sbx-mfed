@@ -8,6 +8,9 @@ dependencies:
   '@module-federation/utilities':
     specifier: ^2.0.4
     version: 2.0.4(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+  lib5:
+    specifier: file:..\lib5\lib5-1.0.0.tgz
+    version: file:../lib5/lib5-1.0.0.tgz(webpack@5.88.2)
   lodash:
     specifier: ~4.17.0
     version: 4.17.0
@@ -1954,3 +1957,20 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  file:../lib5/lib5-1.0.0.tgz(webpack@5.88.2):
+    resolution: {integrity: sha512-rnpMYLkcLK+TZI/JV+R7Y/GPR6JQzrt1714RF93ZTCHml/Tyscf1eepGOH3kharP/sEyXOiN/X+/o6Nb2fmv4Q==, tarball: file:../lib5/lib5-1.0.0.tgz}
+    id: file:../lib5/lib5-1.0.0.tgz
+    name: lib5
+    version: 1.0.0
+    engines: {node: ^18.10.0, pnpm: ^8.6.11}
+    dependencies:
+      '@module-federation/utilities': 2.0.4(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+      lodash: 4.17.0
+      path-browserify: 1.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - next
+      - webpack
+    dev: false

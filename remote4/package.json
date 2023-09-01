@@ -1,5 +1,5 @@
 {
-  "name": "lib2",
+  "name": "remote4",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -15,7 +15,7 @@
     "clean": "rimraf dist",
     "dev": "webpack --mode development --watch --color",
     "build": "pnpm run clean && webpack --mode production --color",
-    "start": "pnpm serve -p 3010 dist",
+    "start": "pnpm serve -p 3008 dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@module-federation/utilities": "^2.0.4",
+    "lib5": "file:..\\lib5\\lib5-1.0.0.tgz",
     "lodash": "~4.17.0",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
