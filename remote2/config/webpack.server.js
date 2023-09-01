@@ -6,6 +6,7 @@ const { serverLibrary } = require('./constants');
 
 module.exports = merge(sharedWebpackConfig, {
   name: 'server',
+  // note: this is recommended for remoteEntry build, works with StreamingTargetPlugin
   target: false,
   // target: 'node',
   // target: 'async-node',
@@ -14,8 +15,33 @@ module.exports = merge(sharedWebpackConfig, {
 
   output: {
     path: path.resolve(__dirname, '../dist/server'),
-    filename: '[name].js',
-    library: serverLibrary,
+    // filename: '[name].js',
+    // library: serverLibrary,
+  },
+
+  // experiments: {
+  //   outputModule: true,
+  // },
+
+  externals: {
+    react: 'commonjs-static react',
+    'react-dom': 'commonjs-static react-dom',
+    'react/jsx-dev-runtime': 'commonjs-static react/jsx-dev-runtime',
+    'react/jsx-runtime': 'commonjs-static react/jsx-runtime',
+    //
+    // react: { 'commonjs-module': 'react', module: 'react' },
+    // 'react-dom': {
+    //   'commonjs-module': 'react-dom',
+    //   module: 'react-dom',
+    // },
+    // 'react/jsx-dev-runtime': {
+    //   'commonjs-module': 'react/jsx-dev-runtime',
+    //   module: 'react/jsx-dev-runtime',
+    // },
+    // 'react/jsx-runtime': {
+    //   'commonjs-module': 'react/jsx-runtime',
+    //   module: 'react/jsx-runtime',
+    // },
   },
 
   optimization: {

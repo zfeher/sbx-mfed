@@ -42,8 +42,6 @@ module.exports = {
         filename: 'static/chunks/remoteEntry.js',
 
         exposes: {
-          './print': './src/print.js',
-          './alma': './src/getAlma.js',
           './title': './src/components/Title.jsx',
           './button': './src/components/Button.jsx',
         },

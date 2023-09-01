@@ -7,8 +7,8 @@ Relevant folders are:
 ```text
 host-next    : uses remote1, remote3
 remote1-next : uses remote2 + expose stuff
-remote2-next : uses remote2 + expose stuff
-remote3-next : expose stuff
+remote2      : expose stuff
+remote3-next : uses remote2 + expose stuff
 ```
 
 Relevant files:
@@ -16,6 +16,7 @@ Relevant files:
 ```text
 remote2-next/tailwind-prefixer-loader.js
 remote*-next/remoteEntry/*
+remote*/remoteEntry/*
 */next.config.js
 ```
 

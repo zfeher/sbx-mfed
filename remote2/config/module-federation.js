@@ -10,17 +10,60 @@ const containerName = 'remote2';
 const containerFilename = 'remoteEntry.js';
 
 const exposes = {
-  './print': './src/print.js',
-  './korte': './src/getKorte.js',
+  './button': './src/components/Button.jsx',
+  './title': './src/components/Title.jsx',
 };
 
-const shared = {
-  lodash: {
-    // eager: true,
-    // import: false,
-    singleton: true,
-    // strictVersion: true,
-  },
+const remotes = (isServer) => {
+  const webpackLocation = isServer ? 'server' : 'client';
+  return {};
+};
+
+const shared = (isServer) => {
+  return {
+    // todo: other next shared stuff too or via consts
+    // ...(isServer ? DEFAULT_SHARE_SCOPE : DEFAULT_SHARE_SCOPE_BROWSER),
+
+    react: {
+      singleton: true,
+      requiredVersion: false,
+      // eager: isServer ? false : true,
+      // import: isServer ? false : undefined,
+      import: false,
+    },
+
+    'react-dom': {
+      singleton: true,
+      requiredVersion: false,
+      // eager: isServer ? false : true,
+      // import: isServer ? false : undefined,
+      import: false,
+    },
+
+    'react/jsx-dev-runtime': {
+      singleton: true,
+      requiredVersion: false,
+      // eager: false,
+      // import: undefined,
+      import: false,
+    },
+
+    'react/jsx-runtime': {
+      singleton: true,
+      requiredVersion: false,
+      // eager: false,
+      // import: isServer ? false : undefined,
+      import: false,
+    },
+
+    // lodash: {
+    //   singleton: true,
+    //   // eager: isServer ? undefined : true,
+    //   // strictVersion: true,
+    //   // import: false,
+    //   // import: isServer ? false : undefined,
+    // },
+  };
 };
 
 module.exports = {
@@ -28,9 +71,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: containerName,
       filename: containerFilename,
-      remotes: {},
+      remotes: remotes(false),
       exposes,
-      shared,
+      shared: shared(false),
     }),
   ],
 
@@ -39,15 +82,15 @@ module.exports = {
       name: containerName,
       filename: containerFilename,
       library: serverLibrary,
-      remotes: {},
+      remotes: remotes(true),
       exposes,
-      shared,
+      shared: shared(true),
     }),
 
     new StreamingTargetPlugin({
       name: containerName,
       library: serverLibrary,
-      remotes: {},
+      remotes: remotes(true),
     }),
   ],
 };

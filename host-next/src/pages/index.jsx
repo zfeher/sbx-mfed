@@ -1,21 +1,23 @@
 import Head from 'next/head';
-import React from 'react';
-// import { printMe } from 'remote1/print';
-// import { getAlma } from 'remote1/alma';
+import dynamic from 'next/dynamic';
+import React, { Suspense } from 'react';
 // import { Title } from 'remote1/title';
 import { Button as R1Button } from 'remote1/button';
 // import { Button as R2Button } from 'remote2/button';
 import { Button as R3Button } from 'remote3/button';
+// import _ from 'lodash';
 
-const printMe = () => {};
-const getAlma = () => {};
+// console.log('next host:', _.join(['next', 'host']));
 
-const Title = () => <p>Title</p>;
-// const R1Button = () => <p>R1Button</p>;
-// const R2Button = () => <p>R2Button</p>;
-// const R3Button = () => <p>R3Button</p>;
-
-printMe();
+// const R1Button = dynamic(
+//   () =>
+//     import('remote1/button')
+//       .then((mod) => mod.Button)
+//       .catch((error) => console.error(error)),
+//   {
+//     ssr: true,
+//   },
+// );
 
 const HostNext = () => {
   return (
@@ -24,13 +26,12 @@ const HostNext = () => {
         <title>Host Next</title>
       </Head>
 
-      <Title></Title>
-
       <div>
         <p>Hello There :)</p>
-        <p>{getAlma()}</p>
 
+        {/* <Suspense> */}
         <R1Button></R1Button>
+        {/* </Suspense> */}
 
         {/* <R2Button></R2Button> */}
 

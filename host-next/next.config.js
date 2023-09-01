@@ -5,8 +5,9 @@ const { createDelegatedModule } = require('@module-federation/utilities');
 const remotes = (isServer) => {
   // note: good to stick to next federation naming, client side might use Next/webpack too
   const nextLocation = isServer ? 'ssr' : 'chunks';
-  // const webpackLocation = isServer ? 'server' : 'client';
+  const webpackLocation = isServer ? 'server' : 'client';
   return {
+    // note: this doesn't work because of nextjs-mf issue, so delegates only
     // remote1: `remote1@http://localhost:3002/_next/static/${nextLocation}/remoteEntry.js`,
     // remote1: `remote1@http://localhost:3002/static/${nextLocation}/remoteEntry.js`,
     //
@@ -19,7 +20,8 @@ const remotes = (isServer) => {
     }),
 
     remote2: createDelegatedModule(require.resolve('./remote-delegate.js'), {
-      remote: `remote2@http://localhost:3004/_next/static/${nextLocation}`,
+      remote: `remote2@http://localhost:3004/${webpackLocation}`,
+      // remote: `remote2@http://localhost:3004/_next/static/${nextLocation}`,
       // remote: `remote2@http://localhost:3004/_next/static/${nextLocation}/remoteEntry.js`,
       // remote: `remote2@http://localhost:3004/static/${nextLocation}/remoteEntry.js`,
     }),
@@ -49,6 +51,18 @@ module.exports = {
     // // todo
     // config.optimization.minimize = false;
 
+    // console.log(
+    //   '@@@@@@@@@@@',
+    //   options.isServer,
+    //   options.nextRuntime,
+    // );
+
+    // // todo: hack
+    // // todo: check exports conditions + resolve.conditionNames approach to avoid this manual way
+    // config.resolve.alias['remote4'] = `remote4/${
+    //   options.isServer ? 'lib.server' : 'lib.client'
+    // }`;
+
     config.module.rules.push({
       test: /\.(tsx|jsx|ts|js)$/,
       // todo: we can be smart here and include third party 1wizz packages and process
@@ -77,9 +91,10 @@ module.exports = {
           },
 
           // lodash: {
-          //   // eager: true,
-          //   // import: false,
           //   singleton: true,
+          //   // eager: options.isServer ? undefined : true,
+          //   // import: options.isServer ? undefined : false,
+          //   // import: false,
           //   // strictVersion: true,
           // },
         },

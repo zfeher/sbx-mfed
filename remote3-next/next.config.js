@@ -3,26 +3,18 @@ const NextFederationPlugin = require('@module-federation/nextjs-mf');
 const { createDelegatedModule } = require('@module-federation/utilities');
 
 const remotes = (isServer) => {
-  const location = isServer ? 'ssr' : 'chunks';
-  // webpack
-  // const location = isServer ? 'server' : 'client';
+  const nextLocation = isServer ? 'ssr' : 'chunks';
+  const webpackLocation = isServer ? 'server' : 'client';
   return {
     //
     // delegate modules
     //
     remote2: createDelegatedModule(require.resolve('./remote-delegate.js'), {
-      remote: `remote2@http://localhost:3004/_next/static/${location}`,
+      remote: `remote2@http://localhost:3004/${webpackLocation}`,
+      // remote: `remote2@http://localhost:3004/_next/static/${nextLocation}`,
       // remote: `remote2@http://localhost:3004/_next/static/${location}/remoteEntry.js`,
       // remote2: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
     }),
-    //
-    // remote2: `remote2@http://localhost:3006/_next/static/${location}/remoteEntry.js`,
-    // remote2: `remote2@http://localhost:3004/_next/static/${location}/remoteEntry.js`,
-    //
-    // webpack
-    // remote2: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
-    //
-    //
   };
 };
 
