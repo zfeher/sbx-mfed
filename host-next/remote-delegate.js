@@ -13,17 +13,17 @@ module.exports = new Promise(async (resolve, reject) => {
 
   const currentRequest = new URLSearchParams(__resourceQuery).get('remote');
   const [global, url] = currentRequest.split('@');
-  const isBrowser = typeof window !== 'undefined';
+  // const isBrowser = typeof window !== 'undefined';
 
   // note: browser only for now
-  if (isBrowser) {
-    const styleUrl = `${url}/remoteEntry.css`;
-    console.log('#### host: load remote style', url);
-    loadStyle(styleUrl).catch((error) => {
-      // note: we let the remote live without style for now
-      console.error(error);
-    });
-  }
+  // if (isBrowser) {
+  //   const styleUrl = `${url}/remoteEntry.css`;
+  //   console.log('#### host: load remote style', url);
+  //   loadStyle(styleUrl).catch((error) => {
+  //     // note: we let the remote live without style for now
+  //     console.error(error);
+  //   });
+  // }
 
   const delegateUrl = `${url}/remoteEntry.js`;
   importDelegatedModule({
