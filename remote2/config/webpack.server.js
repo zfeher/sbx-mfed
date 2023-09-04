@@ -23,25 +23,20 @@ module.exports = merge(sharedWebpackConfig, {
   //   outputModule: true,
   // },
 
+  /*
+   * related: https://github.com/module-federation/universe/tree/nextjs-mf-7.0.7/packages/nextjs-mf/src/internal.ts
+   *
+   * note: Next won't share modules with `import: false` instead these dependencies
+   *  can be required/imported when render runs on server side.
+   */
   externals: {
-    react: 'commonjs-static react',
-    'react-dom': 'commonjs-static react-dom',
-    'react/jsx-dev-runtime': 'commonjs-static react/jsx-dev-runtime',
-    'react/jsx-runtime': 'commonjs-static react/jsx-runtime',
-    //
-    // react: { 'commonjs-module': 'react', module: 'react' },
-    // 'react-dom': {
-    //   'commonjs-module': 'react-dom',
-    //   module: 'react-dom',
-    // },
-    // 'react/jsx-dev-runtime': {
-    //   'commonjs-module': 'react/jsx-dev-runtime',
-    //   module: 'react/jsx-dev-runtime',
-    // },
-    // 'react/jsx-runtime': {
-    //   'commonjs-module': 'react/jsx-runtime',
-    //   module: 'react/jsx-runtime',
-    // },
+    ...['next/router', 'react', 'react-dom', 'react/jsx-runtime'].reduce(
+      (acc, dep) => {
+        acc[dep] = `commonjs-static ${dep}`;
+        return acc;
+      },
+      {},
+    ),
   },
 
   optimization: {
