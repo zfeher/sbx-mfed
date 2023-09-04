@@ -28,7 +28,8 @@ const remotes = (isServer) => {
     }),
 
     remote3: createDelegatedModule(require.resolve('./remote-delegate.js'), {
-      remote: `remote3@http://localhost:3006/_next/static/${nextLocation}`,
+      remote: `remote3@http://localhost:3006/${webpackLocation}`,
+      // remote: `remote3@http://localhost:3006/_next/static/${nextLocation}`,
       // remote: `remote3@http://localhost:3006/_next/static/${nextLocation}/remoteEntry.js`,
       // remote: `remote3@http://localhost:3006/static/${nextLocation}/remoteEntry.js`,
     }),

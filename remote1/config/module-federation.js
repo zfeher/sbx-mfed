@@ -4,6 +4,8 @@ const {
   StreamingTargetPlugin,
 } = require('@module-federation/node');
 const { createDelegatedModule } = require('@module-federation/utilities');
+const DelegateModulesPlugin =
+  require('@module-federation/utilities/src/plugins/DelegateModulesPlugin').default;
 
 const { serverLibrary, defaultShareScope } = require('./constants');
 
@@ -18,14 +20,14 @@ const exposes = {
 const remotes = (isServer) => {
   const location = isServer ? 'server' : 'client';
   return {
-    // todo: switch to delegate modules
-    remote2: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
     //
-    // remote2: createDelegatedModule(require.resolve('../remote-delegate.js'), {
-    //   // note: here we can pass anything just the name and let delegate resolve it etc
-    //   remote: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
-    //   // remote: `remote2@3004`,
-    // }),
+    // remote2: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
+    //
+    // delegate modules
+    remote2: createDelegatedModule(require.resolve('../remote-delegate.js'), {
+      remote: `remote2@http://localhost:3004/${location}`,
+      // remote: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
+    }),
   };
 };
 
@@ -45,6 +47,14 @@ const shared = (isServer) => {
 
 module.exports = {
   client: [
+    new DelegateModulesPlugin({
+      container: containerName,
+      // runtime: 'webpack',
+      runtime: containerName,
+      remotes: remotes(false),
+      debug: false,
+    }),
+
     new ModuleFederationPlugin({
       name: containerName,
       filename: containerFilename,
@@ -55,6 +65,14 @@ module.exports = {
   ],
 
   server: [
+    new DelegateModulesPlugin({
+      container: containerName,
+      // runtime: 'webpack',
+      runtime: containerName,
+      remotes: remotes(true),
+      debug: false,
+    }),
+
     new NodeFederationPlugin({
       name: containerName,
       filename: containerFilename,

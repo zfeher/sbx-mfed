@@ -13,18 +13,6 @@ module.exports = merge(sharedWebpackConfig, {
 
   entry: {},
 
-  // entry: {
-  //   resourceQueries: [
-  //     './remote-delegate.js?remote=remote2@http://localhost:3004/client/remoteEntry.js',
-  //     './remote-delegate.js?remote=remote2@http://localhost:3004/server/remoteEntry.js',
-  //   ],
-  // },
-
-  // entry: [
-  //   './remote-delegate.js?remote=remote2@http://localhost:3004/client/remoteEntry.js',
-  //   './remote-delegate.js?remote=remote2@http://localhost:3004/server/remoteEntry.js',
-  // ],
-
   output: {
     path: path.resolve(__dirname, '../dist/server'),
     // filename: '[name].js',

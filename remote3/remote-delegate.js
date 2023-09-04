@@ -18,7 +18,7 @@ module.exports = new Promise(async (resolve, reject) => {
   // note: browser only for now
   if (isBrowser) {
     const styleUrl = `${url}/remoteEntry.css`;
-    console.log('#### remote1: load remote style', url);
+    console.log('#### remote3: load remote style', url);
     loadStyle(styleUrl).catch((error) => {
       // note: we let the remote live without style for now
       console.error(error);

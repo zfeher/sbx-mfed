@@ -13,8 +13,8 @@
       "path": "remote2"
     },
     {
-      "name": "remote3-next",
-      "path": "remote3-next"
+      "name": "remote3",
+      "path": "remote3"
     },
     {
       "name": "remote1-next",
@@ -25,8 +25,8 @@
       "path": "remote2-next"
     },
     {
-      "name": "remote3",
-      "path": "remote3"
+      "name": "remote3-next",
+      "path": "remote3-next"
     },
     {
       "name": "remote4",

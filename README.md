@@ -8,23 +8,23 @@ Relevant folders are:
 host-next    : uses remote1, remote3
 remote1      : uses remote2 + expose stuff
 remote2      : expose stuff
-remote3-next : uses remote2 + expose stuff
+remote3      : uses remote2 + expose stuff
 ```
 
 Relevant files:
 
 ```text
 remote2-next/tailwind-prefixer-loader.js
-remote*-next/remoteEntry/*
 remote*/remoteEntry/*
-*/next.config.js
+remote*/config/**
+host-next/next.config.js
 ```
 
 ## Init
 
 ```bash
 # from repo root issue:
-cd host-next && pnpm i && cd ../remote1 && pnpm i && cd ../remote2-next && pnpm i && cd ../remote2 && pnpm i && cd ../remote3-next && pnpm i && cd ..
+cd host-next && pnpm i && cd ../remote1 && pnpm i && cd ../remote2-next && pnpm i && cd ../remote2 && pnpm i && cd ../remote3 && pnpm i && cd ..
 ```
 
 ## Production
@@ -41,8 +41,8 @@ pnpm build && pnpm start
 cd remote1
 pnpm build && pnpm start
 
-# step 3: start build + start remote3-next + wait for ready started server
-cd remote3-next
+# step 3: start build + start remote3 + wait for ready started server
+cd remote3
 pnpm build && pnpm start
 
 # step 4: start build + start host-next
@@ -66,8 +66,8 @@ pnpm dev
 cd remote1
 pnpm dev
 
-# step 3: start build + start remote3-next
-cd remote3-next
+# step 3: start build + start remote3
+cd remote3
 pnpm dev
 
 # step 4: start build + start host-next
