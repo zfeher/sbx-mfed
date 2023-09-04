@@ -1,103 +1,110 @@
-// note: https://github.com/module-federation/universe/blob/main/packages/nextjs-mf/src/internal.ts
-const DEFAULT_SHARE_SCOPE = {
+// todo: if not used elsewhere we can move closer to its usage
+const serverLibrary = { type: 'commonjs-module' };
+
+/**
+ * source: https://github.com/module-federation/universe/tree/nextjs-mf-7.0.7/packages/nextjs-mf/src/internal.ts
+ *   `DEFAULT_SHARE_SCOPE`
+ *
+ * note: remotes should never provide these dependencies (`import: false` ensures this)
+ *   they will be provided only by host (FEP)
+ * note: `requiredVersion: false` means it accepts any version of a dependency provided
+ * note: `singleton: true` means only one version of a dependency can be used
+ *
+ * @typedef SharedObject
+ * @type {object}
+ * @property {object} [key] - The key representing the shared object's package name.
+ * @property {boolean} key.singleton - Whether the shared object should be a singleton.
+ * @property {boolean} key.requiredVersion - Whether a specific version of the shared object is required.
+ * @property {boolean} key.eager - Whether the shared object should be eagerly loaded.
+ * @property {boolean} key.import - Whether the shared object should be imported or not.
+ */
+
+/** @type {(isServer: boolean) => SharedObject} */
+const defaultShareScope = (isServer) => ({
   'next/dynamic': {
+    singleton: true,
+    requiredVersion: false,
     eager: false,
-    requiredVersion: false,
-    singleton: true,
-    import: undefined,
-  },
-  'next/head': {
-    eager: false,
-    requiredVersion: false,
-    singleton: true,
-    import: undefined,
-  },
-  'next/link': {
-    eager: true,
-    requiredVersion: false,
-    singleton: true,
-    import: undefined,
-  },
-  'next/router': {
-    requiredVersion: false,
-    singleton: true,
     import: false,
-    eager: false,
   },
+
+  'next/head': {
+    singleton: true,
+    requiredVersion: false,
+    eager: false,
+    import: false,
+  },
+
+  'next/link': {
+    singleton: true,
+    requiredVersion: false,
+    eager: true,
+    import: false,
+  },
+
+  'next/router': {
+    singleton: true,
+    requiredVersion: false,
+    eager: !isServer,
+    import: false,
+  },
+
   'next/image': {
-    requiredVersion: false,
     singleton: true,
-    import: undefined,
+    requiredVersion: false,
     eager: false,
+    import: false,
   },
+
   'next/script': {
-    requiredVersion: false,
     singleton: true,
-    import: undefined,
+    requiredVersion: false,
     eager: false,
+    import: false,
   },
+
   react: {
     singleton: true,
     requiredVersion: false,
-    eager: false,
+    eager: !isServer,
     import: false,
   },
+
   'react-dom': {
     singleton: true,
     requiredVersion: false,
-    eager: false,
+    eager: !isServer,
     import: false,
   },
+
   'react/jsx-dev-runtime': {
     singleton: true,
-    // requiredVersion: false,
-    // eager: false,
-    import: undefined,
-  },
-  'react/jsx-runtime': {
-    singleton: true,
-    // requiredVersion: false,
-    // eager: false,
+    requiredVersion: false,
+    eager: false,
     import: false,
   },
+
+  'react/jsx-runtime': {
+    singleton: true,
+    requiredVersion: false,
+    eager: false,
+    import: false,
+  },
+
   'styled-jsx': {
-    requiredVersion: false,
     singleton: true,
-    import: undefined,
+    requiredVersion: false,
     eager: false,
+    import: false,
   },
+
   'styled-jsx/style': {
-    requiredVersion: false,
     singleton: true,
-    import: undefined,
+    requiredVersion: false,
     eager: false,
+    import: false,
   },
-};
+});
 
-// todo: rethink this, now it is the same as defaul share scope
-//  same as next config might not be good for remotes but a single host
-// const DEFAULT_SHARE_SCOPE_BROWSER = DEFAULT_SHARE_SCOPE;
-const DEFAULT_SHARE_SCOPE_BROWSER = Object.entries(DEFAULT_SHARE_SCOPE).reduce(
-  (acc, item) => {
-    const [key, value] = item;
-
-    acc[key] = { ...value, eager: undefined, import: undefined };
-
-    if (
-      key === 'react' ||
-      key === 'react-dom' ||
-      key === 'next/router' ||
-      key === 'next/link'
-    ) {
-      acc[key].eager = true;
-    }
-    return acc;
-  },
-  {},
-);
-
-exports.serverLibrary = { type: 'commonjs-module' };
-
-exports.DEFAULT_SHARE_SCOPE = DEFAULT_SHARE_SCOPE;
-
-exports.DEFAULT_SHARE_SCOPE_BROWSER = DEFAULT_SHARE_SCOPE_BROWSER;
+exports.serverLibrary = serverLibrary;
+exports.defaultShareScope = defaultShareScope;

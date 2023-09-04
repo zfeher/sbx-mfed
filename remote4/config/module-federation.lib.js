@@ -18,39 +18,7 @@ const exposes = {};
 
 const shared = (isServer) => {
   return {
-    // ...(isServer ? DEFAULT_SHARE_SCOPE : DEFAULT_SHARE_SCOPE_BROWSER),
-
-    react: {
-      singleton: true,
-      requiredVersion: false,
-      // eager: isServer ? false : true,
-      // import: isServer ? false : undefined,
-      import: false,
-    },
-
-    'react-dom': {
-      singleton: true,
-      requiredVersion: false,
-      // eager: isServer ? false : true,
-      // import: isServer ? false : undefined,
-      import: false,
-    },
-
-    'react/jsx-dev-runtime': {
-      singleton: true,
-      requiredVersion: false,
-      // eager: false,
-      // import: undefined,
-      import: false,
-    },
-
-    'react/jsx-runtime': {
-      singleton: true,
-      requiredVersion: false,
-      // eager: false,
-      // import: isServer ? false : undefined,
-      import: false,
-    },
+    ...defaultShareScope(isServer),
 
     lib5: {
       singleton: true,

@@ -5,11 +5,7 @@ const {
 } = require('@module-federation/node');
 const { createDelegatedModule } = require('@module-federation/utilities');
 
-const {
-  serverLibrary,
-  DEFAULT_SHARE_SCOPE_BROWSER,
-  DEFAULT_SHARE_SCOPE,
-} = require('./constants');
+const { serverLibrary, defaultShareScope } = require('./constants');
 
 const containerName = 'remote1';
 const containerFilename = 'remoteEntry.js';
@@ -35,45 +31,12 @@ const remotes = (isServer) => {
 
 const shared = (isServer) => {
   return {
-    // todo: other next shared stuff too or via consts
-    // ...(isServer ? DEFAULT_SHARE_SCOPE : DEFAULT_SHARE_SCOPE_BROWSER),
-
-    react: {
-      singleton: true,
-      requiredVersion: false,
-      // eager: isServer ? false : true,
-      // import: isServer ? false : undefined,
-      import: false,
-    },
-
-    'react-dom': {
-      singleton: true,
-      requiredVersion: false,
-      // eager: isServer ? false : true,
-      // import: isServer ? false : undefined,
-      import: false,
-    },
-
-    'react/jsx-dev-runtime': {
-      singleton: true,
-      requiredVersion: false,
-      // eager: false,
-      // import: undefined,
-      import: false,
-    },
-
-    'react/jsx-runtime': {
-      singleton: true,
-      requiredVersion: false,
-      // eager: false,
-      // import: isServer ? false : undefined,
-      import: false,
-    },
+    ...defaultShareScope(isServer),
 
     // lodash: {
     //   singleton: true,
-    //   // eager: isServer ? undefined : true,
     //   // strictVersion: true,
+    //   // eager: isServer ? undefined : true,
     //   // import: false,
     //   // import: isServer ? false : undefined,
     // },
