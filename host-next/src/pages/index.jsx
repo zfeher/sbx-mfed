@@ -9,6 +9,12 @@ import { Button as R3Button } from 'remote3/button';
 
 // console.log('next host:', _.join(['next', 'host']));
 
+// const R1Button = React.lazy(() =>
+//   import('remote1/button')
+//     .then((mod) => ({ default: mod.Button }))
+//     .catch((error) => console.error(error)),
+// );
+
 // const R1Button = dynamic(
 //   () =>
 //     import('remote1/button')

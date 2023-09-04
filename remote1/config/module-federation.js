@@ -4,7 +4,6 @@ const {
   StreamingTargetPlugin,
 } = require('@module-federation/node');
 const { createDelegatedModule } = require('@module-federation/utilities');
-// const ExternalTemplateRemotesPlugin = require('external-remotes-plugin');
 
 const {
   serverLibrary,
@@ -16,71 +15,68 @@ const containerName = 'remote1';
 const containerFilename = 'remoteEntry.js';
 
 const exposes = {
-  './print': './src/print.js',
-  './alma': './src/getAlma.js',
+  './button': './src/components/Button.jsx',
   './title': './src/components/Title.jsx',
-};
-
-const shared = (isServer) => {
-  return {
-    // ...(isServer ? DEFAULT_SHARE_SCOPE : DEFAULT_SHARE_SCOPE_BROWSER),
-
-    react: {
-      singleton: true,
-      // requiredVersion: false,
-      // eager: false,
-      import: false,
-      //   import: isServer ? undefined : false,
-    },
-
-    'react-dom': {
-      singleton: true,
-      // requiredVersion: false,
-      // eager: false,
-      import: false,
-      //   import: isServer ? undefined : false,
-    },
-
-    'react/jsx-dev-runtime': {
-      singleton: true,
-      // requiredVersion: false,
-      // eager: false,
-      import: undefined,
-    },
-
-    'react/jsx-runtime': {
-      singleton: true,
-      // requiredVersion: false,
-      // eager: false,
-      import: false,
-      //   import: isServer ? undefined : false,
-    },
-
-    lodash: {
-      // eager: true,
-      // import: false,
-      singleton: true,
-      // strictVersion: true,
-    },
-  };
 };
 
 const remotes = (isServer) => {
   const location = isServer ? 'server' : 'client';
   return {
-    //
+    // todo: switch to delegate modules
     remote2: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
     //
-    // external-remotes
-    // remote2: `remote2@[globalThis.remoteUrls.remote2.${location}]`,
-    // remote2: isServer
-    //   ? 'remote2@http://localhost:3004/server/remoteEntry.js'
-    //   : 'remote2@[globalThis.remoteUrls.remote2.client]',
     // remote2: createDelegatedModule(require.resolve('../remote-delegate.js'), {
     //   // note: here we can pass anything just the name and let delegate resolve it etc
     //   remote: `remote2@http://localhost:3004/${location}/remoteEntry.js`,
     //   // remote: `remote2@3004`,
     // }),
+  };
+};
+
+const shared = (isServer) => {
+  return {
+    // todo: other next shared stuff too or via consts
+    // ...(isServer ? DEFAULT_SHARE_SCOPE : DEFAULT_SHARE_SCOPE_BROWSER),
+
+    react: {
+      singleton: true,
+      requiredVersion: false,
+      // eager: isServer ? false : true,
+      // import: isServer ? false : undefined,
+      import: false,
+    },
+
+    'react-dom': {
+      singleton: true,
+      requiredVersion: false,
+      // eager: isServer ? false : true,
+      // import: isServer ? false : undefined,
+      import: false,
+    },
+
+    'react/jsx-dev-runtime': {
+      singleton: true,
+      requiredVersion: false,
+      // eager: false,
+      // import: undefined,
+      import: false,
+    },
+
+    'react/jsx-runtime': {
+      singleton: true,
+      requiredVersion: false,
+      // eager: false,
+      // import: isServer ? false : undefined,
+      import: false,
+    },
+
+    // lodash: {
+    //   singleton: true,
+    //   // eager: isServer ? undefined : true,
+    //   // strictVersion: true,
+    //   // import: false,
+    //   // import: isServer ? false : undefined,
+    // },
   };
 };
 
@@ -93,8 +89,6 @@ module.exports = {
       exposes,
       shared: shared(false),
     }),
-
-    // new ExternalTemplateRemotesPlugin(),
   ],
 
   server: [
@@ -112,7 +106,5 @@ module.exports = {
       library: serverLibrary,
       remotes: remotes(true),
     }),
-
-    // new ExternalTemplateRemotesPlugin(),
   ],
 };

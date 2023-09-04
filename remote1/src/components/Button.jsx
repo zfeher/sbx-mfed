@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
+import '../../remoteEntry/remoteEntry.css';
 
 import { Button as R2Button } from 'remote2/button';
 
@@ -9,12 +10,10 @@ import { Button as R2Button } from 'remote2/button';
 //     .catch((error) => console.error(error)),
 // );
 
-// const R2Button = dynamic(
-//   () =>
-//     import('remote2/button')
-//       .then((mod) => mod.Button)
-//       .catch((error) => console.error(error)),
-//   { ssr: true },
+// const R2Button = dynamic(() =>
+//   import('remote2/button')
+//     .then((mod) => mod.Button)
+//     .catch((error) => console.error(error)),
 // );
 
 export const Button = () => (

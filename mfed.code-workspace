@@ -5,8 +5,8 @@
       "path": "host-next"
     },
     {
-      "name": "remote1-next",
-      "path": "remote1-next"
+      "name": "remote1",
+      "path": "remote1"
     },
     {
       "name": "remote2",
@@ -17,12 +17,12 @@
       "path": "remote3-next"
     },
     {
-      "name": "remote2-next",
-      "path": "remote2-next"
+      "name": "remote1-next",
+      "path": "remote1-next"
     },
     {
-      "name": "remote1",
-      "path": "remote1"
+      "name": "remote2-next",
+      "path": "remote2-next"
     },
     {
       "name": "remote3",

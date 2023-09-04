@@ -6,7 +6,7 @@ Relevant folders are:
 
 ```text
 host-next    : uses remote1, remote3
-remote1-next : uses remote2 + expose stuff
+remote1      : uses remote2 + expose stuff
 remote2      : expose stuff
 remote3-next : uses remote2 + expose stuff
 ```
@@ -24,7 +24,7 @@ remote*/remoteEntry/*
 
 ```bash
 # from repo root issue:
-cd host-next && pnpm i && cd ../remote1-next && pnpm i && cd ../remote2-next && pnpm i && cd ../remote3-next && pnpm i && cd ..
+cd host-next && pnpm i && cd ../remote1 && pnpm i && cd ../remote2-next && pnpm i && cd ../remote2 && pnpm i && cd ../remote3-next && pnpm i && cd ..
 ```
 
 ## Production
@@ -33,12 +33,12 @@ cd host-next && pnpm i && cd ../remote1-next && pnpm i && cd ../remote2-next && 
 # We need 4 terminals for this or other clever solution
 # We start from repo root for each:
 
-# step 1: start build + start remote2-next + wait for ready started server
-cd remote2-next
+# step 1: start build + start remote2 + wait for ready started server
+cd remote2
 pnpm build && pnpm start
 
-# step 2: start build + start remote1-next + wait for ready started server
-cd remote1-next
+# step 2: start build + start remote1 + wait for ready started server
+cd remote1
 pnpm build && pnpm start
 
 # step 3: start build + start remote3-next + wait for ready started server
@@ -58,12 +58,12 @@ pnpm build && pnpm start
 # We need 4 terminals for this or other clever solution
 # We start from repo root for each:
 
-# step 1: start build + start remote2-next
-cd remote2-next
+# step 1: start build + start remote2
+cd remote2
 pnpm dev
 
-# step 2: start build + start remote1-next
-cd remote1-next
+# step 2: start build + start remote1
+cd remote1
 pnpm dev
 
 # step 3: start build + start remote3-next
