@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Button } from '../components/Button';
+import { Box } from '../components/Box';
 
 const Remote2Next = () => {
   return (
@@ -12,7 +12,7 @@ const Remote2Next = () => {
         <p>Hello There :)</p>
       </div>
 
-      <Button></Button>
+      <Box></Box>
     </div>
   );
 };

@@ -15,6 +15,7 @@ export const Title = () => {
         {' '}
         This came fom <code>remote1</code> !!!
       </h1>
+
       <p>And it works like a charm :)</p>
 
       <Remote2Title></Remote2Title>

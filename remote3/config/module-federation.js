@@ -13,7 +13,7 @@ const containerName = 'remote3';
 const containerFilename = 'remoteEntry.js';
 
 const exposes = {
-  './button': './src/components/Button.jsx',
+  './box': './src/components/Box.jsx',
   './title': './src/components/Title.jsx',
 };
 

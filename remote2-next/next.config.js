@@ -43,7 +43,7 @@ module.exports = {
 
         exposes: {
           './title': './src/components/Title.jsx',
-          './button': './src/components/Button.jsx',
+          './box': './src/components/Box.jsx',
         },
 
         shared: {
