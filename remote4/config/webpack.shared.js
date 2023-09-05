@@ -1,4 +1,12 @@
 module.exports = {
+  // experiments: {
+  //   outputModule: true,
+  // },
+
+  // optimization: {
+  //   minimize: false,
+  // },
+
   //   resolve: {
   //     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
   //   },

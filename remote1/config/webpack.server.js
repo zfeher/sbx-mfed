@@ -19,10 +19,6 @@ module.exports = merge(sharedWebpackConfig, {
     // library: serverLibrary,
   },
 
-  // experiments: {
-  //   outputModule: true,
-  // },
-
   /*
    * related: https://github.com/module-federation/universe/tree/nextjs-mf-7.0.7/packages/nextjs-mf/src/internal.ts
    *
@@ -37,10 +33,6 @@ module.exports = merge(sharedWebpackConfig, {
       },
       {},
     ),
-  },
-
-  optimization: {
-    minimize: false,
   },
 
   plugins: [...moduleFederationPlugin.server],

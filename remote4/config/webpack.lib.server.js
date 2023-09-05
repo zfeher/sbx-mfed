@@ -28,10 +28,6 @@ module.exports = merge(sharedWebpackConfig, {
     },
   },
 
-  // experiments: {
-  //   outputModule: true,
-  // },
-
   externals: {
     react: 'commonjs-static react',
     'react-dom': 'commonjs-static react-dom',
@@ -51,10 +47,6 @@ module.exports = merge(sharedWebpackConfig, {
     //   'commonjs-module': 'react/jsx-runtime',
     //   module: 'react/jsx-runtime',
     // },
-  },
-
-  optimization: {
-    minimize: false,
   },
 
   plugins: [...moduleFederationPlugin.server],

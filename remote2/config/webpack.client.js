@@ -15,18 +15,10 @@ module.exports = merge(sharedWebpackConfig, {
     // publicPath: 'http://localhost:3004/client/',
   },
 
-  // experiments: {
-  //   outputModule: true,
-  // },
-
   // resolve: {
   //   // note: @module-federation/utilities needs a path for browser it seems
   //   fallback: { path: require.resolve('path-browserify') },
   // },
-
-  optimization: {
-    minimize: false,
-  },
 
   plugins: [...moduleFederationPlugin.client],
 });
