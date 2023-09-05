@@ -23,6 +23,12 @@ const shared = (isServer) => {
   return {
     ...defaultShareScope(isServer),
 
+    '@module-federation/utilities': {
+      singleton: true,
+      // strictVersion: true,
+      import: false,
+    },
+
     // lodash: {
     //   singleton: true,
     //   // strictVersion: true,

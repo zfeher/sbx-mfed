@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@module-federation/utilities':
-    specifier: ^2.0.5
-    version: 2.0.5(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+    specifier: ^2.0.7
+    version: 2.0.7(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
   lodash:
     specifier: ~4.13.1
     version: 4.13.1
@@ -17,26 +17,26 @@ dependencies:
 
 devDependencies:
   '@module-federation/nextjs-mf':
-    specifier: ^7.0.7
-    version: 7.0.7(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+    specifier: ^7.0.8
+    version: 7.0.8(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
   autoprefixer:
     specifier: ^10.4.15
-    version: 10.4.15(postcss@8.4.27)
+    version: 10.4.15(postcss@8.4.29)
   postcss:
-    specifier: ^8.4.27
-    version: 8.4.27
+    specifier: ^8.4.29
+    version: 8.4.29
   postcss-prefixer:
     specifier: ^3.0.0
-    version: 3.0.0(postcss@8.4.27)
+    version: 3.0.0(postcss@8.4.29)
   prettier:
-    specifier: ^3.0.1
-    version: 3.0.1
+    specifier: ^3.0.3
+    version: 3.0.3
   rimraf:
     specifier: ^5.0.1
     version: 5.0.1
   serve:
-    specifier: ^14.2.0
-    version: 14.2.0
+    specifier: ^14.2.1
+    version: 14.2.1
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -94,8 +94,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  /@module-federation/nextjs-mf@7.0.7(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
-    resolution: {integrity: sha512-q+a2V1AUlF1cR0MYX6D5dRawfP1Qi7TYyvzYt/ueGQyN22ISnXbIeYUljJUjILmpdP+DZoSPlWlEDhzUOQLSKg==}
+  /@module-federation/nextjs-mf@7.0.8(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
+    resolution: {integrity: sha512-sjpcujqBKxP3pFD+tivvxizZnN2Pszwdm80u4sK5xfPAW8tzjX9PGpZdFmtj8TNAKDQ8i269mrd25ojOzEYu0Q==}
     peerDependencies:
       next: ^12 || ^13
       react: ^17 || ^18
@@ -106,8 +106,8 @@ packages:
       styled-jsx:
         optional: true
     dependencies:
-      '@module-federation/node': 1.0.6(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
-      '@module-federation/utilities': 2.0.5(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+      '@module-federation/node': 1.0.7(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+      '@module-federation/utilities': 2.0.6(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
       encoding: 0.1.13
       eventemitter3: 5.0.1
       fast-glob: 3.3.1
@@ -119,8 +119,8 @@ packages:
       webpack-sources: 3.2.3
     dev: true
 
-  /@module-federation/node@1.0.6(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
-    resolution: {integrity: sha512-NygMrts/xr8u8aQAl/FcDPxJwlJ256eArBb1OueJcwJX5MDsLhl1DM3jGx3PjGUmo9dy1xYi2RJW2tn7BS2F5g==}
+  /@module-federation/node@1.0.7(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
+    resolution: {integrity: sha512-ZOdY8/qjAV8B8pL/+xf4KqEeQ6aJQoVjgn8IzS5Hk4qqMiow0Sf9EEX69LTI+GIVztVLjS/Q6N2QfS6ghsY1sw==}
     peerDependencies:
       next: ^12||^13
       react: ^16||^17||^18
@@ -134,7 +134,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@module-federation/utilities': 2.0.5(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
+      '@module-federation/utilities': 2.0.6(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
       encoding: 0.1.13
       next: 13.4.7(react-dom@18.2.0)(react@18.2.0)
       node-fetch: 2.6.9(encoding@0.1.13)
@@ -144,8 +144,8 @@ packages:
       webpack-sources: 3.2.3
     dev: true
 
-  /@module-federation/utilities@2.0.5(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
-    resolution: {integrity: sha512-M0tIU989lIGBd3AmMjA3wlCBCzlL73g921TyPbVXCc4/U5hrdqVzDe/xwJiM8Vxx25YWEcAutzaY8Q+mZQ+IBw==}
+  /@module-federation/utilities@2.0.6(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
+    resolution: {integrity: sha512-2/jfEkdi5U0SZDZMaZrTakhtacXIZib84jOHXrGEw3wQ1x8DfPyOtO7WW/G+DmsEGq4z+OVkMrDQTw+KjHTFNQ==}
     peerDependencies:
       next: ^12 || ^13
       react: ^16 || ^17 || ^18
@@ -164,6 +164,29 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       webpack: 5.88.2
       webpack-sources: 3.2.3
+    dev: true
+
+  /@module-federation/utilities@2.0.7(next@13.4.7)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2):
+    resolution: {integrity: sha512-NNXBzMEYlbiwqxZQR2qQEgQrXwIJ4LlVm2Of9nb0Y3qwCZXOUSgKeZxi5Je4E6xeP3uyyt8Vq1sEBOdANk4S4g==}
+    peerDependencies:
+      next: ^12 || ^13
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+      webpack: ^5.40.0
+    peerDependenciesMeta:
+      next:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      next: 13.4.7(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      webpack: 5.88.2
+      webpack-sources: 3.2.3
+    dev: false
 
   /@next/env@13.4.7:
     resolution: {integrity: sha512-ZlbiFulnwiFsW9UV1ku1OvX/oyIPLtMk9p/nnvDSwI0s7vSoZdRtxXNsaO+ZXrLv/pMbXVGq4lL8TbY9iuGmVw==}
@@ -487,7 +510,7 @@ packages:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
     dev: true
 
-  /autoprefixer@10.4.15(postcss@8.4.27):
+  /autoprefixer@10.4.15(postcss@8.4.29):
     resolution: {integrity: sha512-KCuPB8ZCIqFdA4HwKXsvz7j6gvSDNhDP7WnUjBleRkKjPdvCmHFuQ77ocavI8FT6NdvlBnE2UFr2H4Mycn8Vew==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -499,7 +522,7 @@ packages:
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
-      postcss: 8.4.27
+      postcss: 8.4.29
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -1337,29 +1360,29 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /postcss-import@15.1.0(postcss@8.4.27):
+  /postcss-import@15.1.0(postcss@8.4.29):
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
-      postcss: 8.4.27
+      postcss: 8.4.29
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.4
     dev: true
 
-  /postcss-js@4.0.1(postcss@8.4.27):
+  /postcss-js@4.0.1(postcss@8.4.29):
     resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
       postcss: ^8.4.21
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.27
+      postcss: 8.4.29
     dev: true
 
-  /postcss-load-config@4.0.1(postcss@8.4.27):
+  /postcss-load-config@4.0.1(postcss@8.4.29):
     resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
     engines: {node: '>= 14'}
     peerDependencies:
@@ -1372,28 +1395,28 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      postcss: 8.4.27
+      postcss: 8.4.29
       yaml: 2.3.1
     dev: true
 
-  /postcss-nested@6.0.1(postcss@8.4.27):
+  /postcss-nested@6.0.1(postcss@8.4.29):
     resolution: {integrity: sha512-mEp4xPMi5bSWiMbsgoPfcP74lsWLHkQbZc3sY+jWYd65CUwXrUaTp0fmNpa01ZcETKlIgUdFN/MpS2xZtqL9dQ==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.4.27
+      postcss: 8.4.29
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /postcss-prefixer@3.0.0(postcss@8.4.27):
+  /postcss-prefixer@3.0.0(postcss@8.4.29):
     resolution: {integrity: sha512-q5JEBO8KcJheLLK9RezOw6a26Kdvr2bmPXiK2rsU/5G4h/b6lQh2PhmhvTHvogLQnRUgTNGw76WOiIoiJh+2tw==}
     engines: {node: ^10 || ^12 || >=14}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
       css-selector-tokenizer: 0.7.3
-      postcss: 8.4.27
+      postcss: 8.4.29
     dev: true
 
   /postcss-selector-parser@6.0.13:
@@ -1416,8 +1439,8 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /postcss@8.4.27:
-    resolution: {integrity: sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==}
+  /postcss@8.4.29:
+    resolution: {integrity: sha512-cbI+jaqIeu/VGqXEarWkRCCffhjgXc0qjBtXpqJhTBohMUjUQnbBr0xqX3vEKudc4iviTewcJo5ajcec5+wdJw==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -1425,8 +1448,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier@3.0.1:
-    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -1580,8 +1603,8 @@ packages:
       range-parser: 1.2.0
     dev: true
 
-  /serve@14.2.0:
-    resolution: {integrity: sha512-+HOw/XK1bW8tw5iBilBz/mJLWRzM8XM6MPxL4J/dKzdxq1vfdEWSwhaR7/yS8EJp5wzvP92p1qirysJvnEtjXg==}
+  /serve@14.2.1:
+    resolution: {integrity: sha512-48er5fzHh7GCShLnNyPBRPEjs2I6QBozeGr02gaacROiyS/8ARADlj595j39iZXAqBbJHH/ivJJyPRWY9sQWZA==}
     engines: {node: '>= 14'}
     hasBin: true
     dependencies:
@@ -1748,11 +1771,11 @@ packages:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
-      postcss: 8.4.27
-      postcss-import: 15.1.0(postcss@8.4.27)
-      postcss-js: 4.0.1(postcss@8.4.27)
-      postcss-load-config: 4.0.1(postcss@8.4.27)
-      postcss-nested: 6.0.1(postcss@8.4.27)
+      postcss: 8.4.29
+      postcss-import: 15.1.0(postcss@8.4.29)
+      postcss-js: 4.0.1(postcss@8.4.29)
+      postcss-load-config: 4.0.1(postcss@8.4.29)
+      postcss-nested: 6.0.1(postcss@8.4.29)
       postcss-selector-parser: 6.0.13
       resolve: 1.22.4
       sucrase: 3.34.0
