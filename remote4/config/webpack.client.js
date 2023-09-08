@@ -15,7 +15,6 @@ module.exports = merge(sharedWebpackConfig, {
   output: {
     path: path.resolve(__dirname, '../dist/client'),
     publicPath: 'auto',
-    // publicPath: 'http://localhost:3008/client/',
     // library: {
     //   type: 'commonjs-static',
     //   // type: 'commonjs-module',

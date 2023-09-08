@@ -81,14 +81,18 @@ const defaultShareScope = (isServer) => ({
     singleton: true,
     requiredVersion: false,
     eager: false,
-    import: false,
+    // todo: fallback for client is only for development mode. prod should pick
+    //  up host shared runtime so we could leave this for now and not checking `mode`
+    import: isServer ? false : undefined,
   },
 
   'react/jsx-runtime': {
     singleton: true,
     requiredVersion: false,
     eager: false,
-    import: false,
+    // todo: fallback for client is only for development mode. prod should pick
+    //  up host shared runtime so we could leave this for now and not checking `mode`
+    import: isServer ? false : undefined,
   },
 
   'styled-jsx': {
