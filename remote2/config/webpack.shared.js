@@ -35,7 +35,7 @@ module.exports = {
 
           {
             // todo: finalize
-            loader: path.resolve('../remote2-next/tailwind-prefixer-loader.js'),
+            loader: path.resolve('../remote2/tailwind-prefixer-loader.js'),
 
             options: {
               prefix: 'rmt2-',

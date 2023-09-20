@@ -14,7 +14,7 @@ remote3      : uses remote2 + expose stuff
 Relevant files:
 
 ```text
-remote2-next/tailwind-prefixer-loader.js
+remote2/tailwind-prefixer-loader.js
 remote*/remoteEntry/*
 remote*/config/**
 host-next/next.config.js

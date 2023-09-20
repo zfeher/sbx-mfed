@@ -45,7 +45,7 @@ module.exports = {
       //   return !input.includes('athing');
       // },
       use: {
-        loader: path.resolve('../remote2-next/tailwind-prefixer-loader.js'),
+        loader: path.resolve('../remote2/tailwind-prefixer-loader.js'),
         options: {
           prefix: 'rmt3-',
           tailwindConfigPath: './remoteEntry/tailwind.config.js',
