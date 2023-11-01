@@ -33,6 +33,22 @@
       "enabled": false
     },
     {
+      "extends": "local>zfeher/sbx-mfed//.renovate/monorepo-radix-ui",
+      "matchUpdateTypes": ["major"],
+      "groupName": "radix ui (major)",
+      "groupSlug": "radix-ui-major",
+      "enabled": true
+    },
+    {
+      "extends": "local>zfeher/sbx-mfed//.renovate/monorepo-radix-ui",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "radix ui (non major)",
+      "groupSlug": "radix-ui-non-major",
+      "addLabels": ["safe"],
+      "automerge": false,
+      "enabled": true
+    },
+    {
       "matchDatasources": ["npm"],
       "matchPackageNames": ["@types/node"],
       "allowedVersions": "18.x",
