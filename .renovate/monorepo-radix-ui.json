@@ -1,0 +1,10 @@
+{
+  "description": "Radix UI monorepo",
+
+  "matchSourceUrls": [
+    "https://github.com/radix-ui/primitives",
+    "https://github.com/radix-ui/icons",
+    "https://github.com/radix-ui/themes",
+    "https://github.com/radix-ui/colors"
+  ]
+}
